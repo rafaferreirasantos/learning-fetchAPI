@@ -1,0 +1,9 @@
+label {
+  text-align: center;
+  font-family: "Pacifico";
+}
+.delete-icon {
+    background: url(./img/lixo.svg) no-repeat top left;
+    height: 24px;
+    width: 24px;
+}
