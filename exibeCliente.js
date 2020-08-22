@@ -8,6 +8,9 @@ function removeClienteListener(id) {
   console.log("idCliente:", id);
   if (confirm("Deseja excluir este cliente?")) {
     deleteCliente(id)
+      .then(resp => {
+        document.location.reload();
+      })
   }
 }
 function updateClienteListener(id) {

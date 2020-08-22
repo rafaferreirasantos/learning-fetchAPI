@@ -25,10 +25,15 @@ function addCliente(nome, cpf) {
           'Content-Type': 'application/json'
         },
         body: dadoJSON
-      })
-        .then(retorno => {
-          return retorno.body;
-        });
+      }).then(resp => {
+        if (resp.status == 200) {
+          const form = document.querySelector('[data-form]');
+          form.appendChild(exibeMensagemSucesso("Cliente adicionado com sucesso."));
+        }
+      }).catch(resp => {
+        const form = document.querySelector('[data-form]');
+        form.appendChild(exibeMensagemErro("Erro adicionando com cliente."));
+      });
     } else {
       console.error("Cliente já cadastrado na base de dados");
     }
